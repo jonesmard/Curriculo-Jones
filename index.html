@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Profissional | Jones Mardoqueu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .section-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+
+        .timeline-badge {
+            @apply px-3 py-1 text-xs font-bold rounded-full;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-bold text-xl tracking-tight text-slate-800">
+                    JONES MARDOQUEU
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8 text-sm font-medium">
+                        <a href="#inicio" class="text-slate-600 hover:text-slate-900 transition-colors">Início</a>
+                        <a href="#experiencia" class="text-slate-600 hover:text-slate-900 transition-colors">Experiência & Gestão</a>
+                        <a href="#projeto" class="text-slate-600 hover:text-slate-900 transition-colors">Inteligência de Dados</a>
+                        <a href="#competencias" class="text-slate-600 hover:text-slate-900 transition-colors">Expertise</a>
+                        <a href="#contacto" class="px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all shadow-sm">Contactar</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-2">
+            <a href="#inicio" class="block text-slate-600 py-2">Início</a>
+            <a href="#experiencia" class="block text-slate-600 py-2">Experiência</a>
+            <a href="#projeto" class="block text-slate-600 py-2">Inovação</a>
+            <a href="#competencias" class="block text-slate-600 py-2">Expertise</a>
+        </div>
+    </nav>
+
+    <!-- Secção Hero -->
+    <section id="inicio" class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest text-slate-500 uppercase bg-slate-100 rounded-full">
+                Estrategista em Administração | Contabilidade | Processos
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 gradient-text">
+                Gestão de Alta Performance <br class="hidden md:block"> orientada a Resultados.
+            </h1>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Profissional com perfil híbrido em **Administração e Ciências Contábeis**. Especialista em transformar dados brutos em decisões estratégicas, com vasta experiência em liderança operacional, otimização de fluxos de trabalho e automação de processos internos.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#experiencia" class="px-8 py-4 bg-slate-900 text-white rounded-xl font-semibold shadow-lg hover:bg-slate-800 transition-all">
+                    Explorar Expertise Administrativa
+                </a>
+                <a href="#projeto" class="px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-xl font-semibold hover:bg-slate-50 transition-all">
+                    Ver Projeto de BI
+                </a>
+            </div>
+            <div class="mt-16 text-slate-500 text-sm flex justify-center items-center gap-8 flex-wrap font-medium">
+                <span><i class="fas fa-map-marker-alt mr-2 text-slate-400"></i> Bom Jardim da Serra, SC</span>
+                <span class="flex items-center"><i class="fas fa-graduation-cap mr-2 text-slate-400"></i> Dupla Graduação: Adm & Contábeis (UniFatecie)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiência e Gestão Administrativa -->
+    <section id="experiencia" class="py-24 px-4 section-animate">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4 text-center">Gestão & Trajetória Profissional</h2>
+            <p class="text-slate-500 text-center mb-16 max-w-2xl mx-auto">Foco em eficiência operacional e controle financeiro estratégico.</p>
+            
+            <div class="space-y-12">
+                <!-- Resort Atual -->
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden border-l-4 border-l-slate-900">
+                    <div class="flex flex-col md:flex-row md:justify-between items-start md:items-center mb-6">
+                        <div>
+                            <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">Atuação Estratégica</span>
+                            <h3 class="text-2xl font-bold text-slate-900">Rio do Rastro ECO Resort</h3>
+                        </div>
+                        <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mt-2 md:mt-0 italic">Atuação em Hospitalidade de Alto Padrão</span>
+                    </div>
+                    <h4 class="text-slate-700 font-semibold mb-4">Setor de Reservas & Gestão Administrativa</h4>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600 text-sm leading-relaxed">
+                        <li class="flex gap-3 items-start">
+                            <i class="fas fa-arrow-right text-slate-400 mt-1"></i>
+                            <span>**Otimização de Fluxos:** Revisão e automação dos processos de check-in e faturamento para redução de erros operacionais.</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fas fa-arrow-right text-slate-400 mt-1"></i>
+                            <span>**Controladoria Operacional:** Conciliação financeira rigorosa e gestão de receitas provenientes de atendimento internacional.</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fas fa-arrow-right text-slate-400 mt-1"></i>
+                            <span>**Suporte à Decisão:** Fornecimento de dados críticos para a gerência sobre taxas de ocupação e previsão de demanda (Forecasting).</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fas fa-arrow-right text-slate-400 mt-1"></i>
+                            <span>**Compliance:** Garantia de conformidade total em auditorias de processos internos.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pizzaria do Amigo (Foco Administrativo) -->
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden border-l-4 border-l-slate-400">
+                    <div class="flex flex-col md:flex-row md:justify-between items-start md:items-center mb-4">
+                        <h3 class="text-xl font-bold">Gerente de Unidade de Negócio</h3>
+                        <span class="text-xs text-slate-400 font-bold uppercase">Set/2023 – Jan/2024</span>
+                    </div>
+                    <p class="text-slate-500 font-medium mb-4 italic">Pizzaria do Amigo</p>
+                    <p class="text-slate-600 text-sm mb-6">Liderança integral do estabelecimento com foco em rentabilidade e produtividade.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="p-3 bg-slate-50 rounded-lg">
+                            <div class="text-[10px] font-bold text-slate-400 uppercase">Gestão Financeira</div>
+                            <div class="text-xs font-semibold">DRE e Fluxo de Caixa</div>
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-lg">
+                            <div class="text-[10px] font-bold text-slate-400 uppercase">Supply Chain</div>
+                            <div class="text-xs font-semibold">Cotação & Compras Estratégicas</div>
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-lg">
+                            <div class="text-[10px] font-bold text-slate-400 uppercase">Operações</div>
+                            <div class="text-xs font-semibold">Logística de Expedição</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maje Max -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card p-6 rounded-xl border-l-4 border-l-slate-300">
+                        <h3 class="font-bold text-lg mb-1">Análise de Estoque & TI</h3>
+                        <p class="text-xs text-slate-400 font-bold mb-3">Maje Max Motopecas | 2021 – 2023</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Responsável por desenvolver melhorias no sistema de localização virtual de estoque, otimizando o tempo de picking e packing em 20%. Emissão técnica de NF-e e suporte de infraestrutura.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag text-[10px]">Gestão de Ativos</span>
+                            <span class="skill-tag text-[10px]">ERP SGBR</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl border-l-4 border-l-slate-300">
+                        <h3 class="font-bold text-lg mb-1">Analista de Controladoria</h3>
+                        <p class="text-xs text-slate-400 font-bold mb-3">Casa Combate | 2019</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Foco em fiscal e logística: emissão de manifestos de carga e entrada de notas fiscais. Atuação direta na verificação e cotação de preços de mercado para garantir competitividade.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag text-[10px]">Manifestos</span>
+                            <span class="skill-tag text-[10px]">Cotações</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formação Acadêmica Dupla -->
+    <section class="py-24 bg-slate-900 text-white">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12">Excelência Acadêmica UniFatecie</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 bg-slate-800 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all">
+                    <i class="fas fa-balance-scale text-3xl mb-4 text-blue-400"></i>
+                    <h3 class="text-xl font-bold mb-2">Ciências Contábeis</h3>
+                    <p class="text-slate-400 text-sm">Bacharelado | Em andamento</p>
+                    <p class="mt-4 text-xs text-slate-500 leading-relaxed">Foco em legislação fiscal, auditoria e contabilidade gerencial voltada para perícia.</p>
+                </div>
+                <div class="p-8 bg-slate-800 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all">
+                    <i class="fas fa-chart-line text-3xl mb-4 text-blue-400"></i>
+                    <h3 class="text-xl font-bold mb-2">Administração</h3>
+                    <p class="text-slate-400 text-sm">Bacharelado | Em andamento</p>
+                    <p class="mt-4 text-xs text-slate-500 leading-relaxed">Desenvolvimento de competências em gestão de pessoas, processos produtivos e estratégia de negócios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inteligência de Dados & Dashboard -->
+    <section id="projeto" class="py-24 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="section-animate">
+                    <h3 class="text-blue-600 font-bold mb-4 uppercase tracking-widest text-sm">Inovação Aplicada</h3>
+                    <h2 class="text-4xl font-extrabold mb-8">Administração <br> orientada por Dados</h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Não apenas administro processos; eu os digitalizo. Desenvolvi um dashboard exclusivo para o Rio do Rastro ECO Resort que permite uma visão macro e micro do negócio, integrando Contabilidade e Operações em uma única interface.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-4 bg-slate-50 rounded-xl border">
+                            <h4 class="font-bold text-slate-900 mb-2 italic">KPIs Financeiros</h4>
+                            <p class="text-xs text-slate-500">Acompanhamento em tempo real de margens e ROI.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border">
+                            <h4 class="font-bold text-slate-900 mb-2 italic">Análise de Fluxo</h4>
+                            <p class="text-xs text-slate-500">Mapeamento de gargalos no atendimento e reservas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-animate relative">
+                    <!-- Real Mockup Style based on image -->
+                    <div class="bg-slate-50 rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
+                        <div class="flex items-center gap-2 p-3 bg-white border-b">
+                            <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+                            <div class="text-[9px] font-bold text-slate-400 uppercase ml-2">Rio do Rastro ECO Resort Dashboard</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="grid grid-cols-4 gap-3 mb-6">
+                                <div class="p-2 bg-white rounded shadow-sm border text-center">
+                                    <div class="text-[8px] text-slate-400 font-bold">RECEITA</div>
+                                    <div class="text-[10px] font-bold">R$ 290k</div>
+                                </div>
+                                <div class="p-2 bg-white rounded shadow-sm border text-center">
+                                    <div class="text-[8px] text-slate-400 font-bold">RESERVAS</div>
+                                    <div class="text-[10px] font-bold">47</div>
+                                </div>
+                                <div class="p-2 bg-white rounded shadow-sm border text-center">
+                                    <div class="text-[8px] text-slate-400 font-bold">OCUPAÇÃO</div>
+                                    <div class="text-[10px] font-bold">84%</div>
+                                </div>
+                                <div class="p-2 bg-white rounded shadow-sm border text-center">
+                                    <div class="text-[8px] text-slate-400 font-bold">FIDELIDADE</div>
+                                    <div class="text-[10px] font-bold">128</div>
+                                </div>
+                            </div>
+                            <div class="h-32 w-full bg-white rounded border p-2 flex items-end justify-between gap-1 mb-4">
+                                <div class="bg-blue-400/20 w-full h-1/2 rounded-t"></div>
+                                <div class="bg-blue-400/40 w-full h-2/3 rounded-t"></div>
+                                <div class="bg-blue-400/60 w-full h-3/4 rounded-t"></div>
+                                <div class="bg-blue-600 w-full h-full rounded-t"></div>
+                                <div class="bg-blue-800 w-full h-4/5 rounded-t"></div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-[9px] border-b pb-1"><span class="font-bold">Hóspede</span><span class="font-bold">Check-in</span></div>
+                                <div class="flex justify-between text-[8px] text-slate-500"><span>Maria Silva</span><span>15/02</span></div>
+                                <div class="flex justify-between text-[8px] text-slate-500"><span>Carlos Mendes</span><span>16/02</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Grid -->
+    <section id="competencias" class="py-24 px-4 bg-slate-50">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-16">Eixo de Competências</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                
+                <div class="p-6 glass-card rounded-2xl">
+                    <h4 class="font-bold mb-4 text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-briefcase text-blue-500"></i> Gestão Admin
+                    </h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Planejamento Estratégico</span>
+                        <span class="skill-tag">Liderança Operacional</span>
+                        <span class="skill-tag">Gestão de KPIs</span>
+                        <span class="skill-tag">Otimização de Fluxos</span>
+                    </div>
+                </div>
+
+                <div class="p-6 glass-card rounded-2xl">
+                    <h4 class="font-bold mb-4 text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-file-invoice-dollar text-blue-500"></i> Contabilidade
+                    </h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Controladoria</span>
+                        <span class="skill-tag">Emissão NF-e</span>
+                        <span class="skill-tag">Gestão Fiscal</span>
+                        <span class="skill-tag">Conciliação Bancária</span>
+                        <span class="skill-tag">Auditoria</span>
+                    </div>
+                </div>
+
+                <div class="p-6 glass-card rounded-2xl">
+                    <h4 class="font-bold mb-4 text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-code-branch text-blue-500"></i> Tecnologia
+                    </h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">ERP SGBR / CISS</span>
+                        <span class="skill-tag">Lógica de Programação</span>
+                        <span class="skill-tag">Excel Dashboarding</span>
+                        <span class="skill-tag">Business Intelligence</span>
+                    </div>
+                </div>
+
+                <div class="p-6 glass-card rounded-2xl">
+                    <h4 class="font-bold mb-4 text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-star text-blue-500"></i> Diferenciais
+                    </h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Hospitalidade High-End</span>
+                        <span class="skill-tag">Inglês & Espanhol</span>
+                        <span class="skill-tag">Aprendizado Ágil</span>
+                        <span class="skill-tag">Adaptabilidade</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="bg-white border-t border-slate-200 py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">Interessado em resultados sólidos?</h2>
+            <p class="text-slate-500 mb-10 italic">"Minha meta é traduzir a complexidade administrativa em eficiência financeira."</p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
+                <a href="mailto:jonesmardoqueu@gmail.com" class="flex items-center gap-3 text-slate-700 hover:text-blue-600 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center">
+                        <i class="far fa-envelope"></i>
+                    </div>
+                    <span class="font-medium text-sm">jonesmardoqueu@gmail.com</span>
+                </a>
+                <a href="tel:87991296292" class="flex items-center gap-3 text-slate-700 hover:text-blue-600 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <span class="font-medium text-sm">87 99129-6292</span>
+                </a>
+                <a href="https://www.linkedin.com/in/jonesmard/" target="_blank" class="flex items-center gap-3 text-slate-700 hover:text-blue-600 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <span class="font-medium text-sm">LinkedIn/jonesmard</span>
+                </a>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-200">
+                <p class="text-slate-400 text-[10px] uppercase tracking-widest font-bold">
+                    Jones Mardoqueu Antão da Silva Souza
+                </p>
+                <p class="text-[9px] text-slate-400 mt-2">UniFatecie: Gestão Administrativa & Contabilidade Gerencial</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-animate').forEach(section => {
+            observer.observe(section);
+        });
+
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    </script>
+</body>
+</html>
